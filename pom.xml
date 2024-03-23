@@ -13,6 +13,7 @@
         <module>infrastructure/kafka/kafka-consumer</module>
         <module>infrastructure/kafka/kafka-model</module>
         <module>infrastructure/kafka/kafka-config-data</module>
+        <module>common/common-application</module>
     </modules>
 
     <parent>
@@ -92,6 +93,11 @@
                 <artifactId>mockito-core</artifactId>
                 <version>${mockito.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.food.ordering.system</groupId>
+                <artifactId>common-application</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
