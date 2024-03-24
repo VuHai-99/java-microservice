@@ -19,11 +19,13 @@ public class CreateOrderKafkaMessagePublisher implements OrderCreatedPaymentReeq
     private final OrderMessagingDataMapper orderMessagingDataMapper;
     private final OrderServiceConfigData orderServiceConfigData;
     private KafkaProducer<String, PaymentRequestAvroModel> kafkaProducer;
+    private final OrderKafkaMessageHelper orderKafkaMessageHelper;
 
-    public CreateOrderKafkaMessagePublisher(OrderMessagingDataMapper orderMessagingDataMapper, OrderServiceConfigData orderServiceConfigData, KafkaProducer<String, PaymentRequestAvroModel> kafkaProducer) {
+    public CreateOrderKafkaMessagePublisher(OrderMessagingDataMapper orderMessagingDataMapper, OrderServiceConfigData orderServiceConfigData, KafkaProducer<String, PaymentRequestAvroModel> kafkaProducer, OrderKafkaMessageHelper orderKafkaMessageHelper) {
         this.orderMessagingDataMapper = orderMessagingDataMapper;
         this.orderServiceConfigData = orderServiceConfigData;
         this.kafkaProducer = kafkaProducer;
+        this.orderKafkaMessageHelper = orderKafkaMessageHelper;
     }
 
     @Override
@@ -36,8 +38,11 @@ public class CreateOrderKafkaMessagePublisher implements OrderCreatedPaymentReeq
                     .orderCreatedEventToPaymentRequestAvroModel(domainEvent);
 
             kafkaProducer.send(
-                    orderServiceConfigData.getPaymentRequestTopicName(), orderId, paymentRequestAvroModel, getKafkaCallback(
-                            orderServiceConfigData.getPaymentResponseTopicName(), paymentRequestAvroModel
+                    orderServiceConfigData.getPaymentRequestTopicName(), orderId, paymentRequestAvroModel, orderKafkaMessageHelper.getKafkaCallback(
+                            orderServiceConfigData.getPaymentResponseTopicName(),
+                            paymentRequestAvroModel,
+                            orderId,
+                            "PaymentRequestAvroModel"
                     ));
 
             log.info("PaymentRequestAvroModel sent to Kafka for order id: {}", paymentRequestAvroModel.getOrderId());
@@ -47,28 +52,4 @@ public class CreateOrderKafkaMessagePublisher implements OrderCreatedPaymentReeq
         }
     }
 
-    private ListenableFutureCallback<SendResult<String, PaymentRequestAvroModel>> getKafkaCallback(
-            String paymentResponseTopicName, PaymentRequestAvroModel paymentRequestAvroModel
-    ) {
-        return new ListenableFutureCallback<SendResult<String, PaymentRequestAvroModel>>() {
-            @Override
-            public void onFailure(Throwable ex) {
-                log.error("Error while sending PaymentRequestAvroModel "+
-                        "message {} to topic {}", paymentRequestAvroModel.toString(), paymentResponseTopicName, ex);
-            }
-
-            @Override
-            public void onSuccess(SendResult<String, PaymentRequestAvroModel> result) {
-                RecordMetadata metadata = result.getRecordMetadata();
-                log.info("Received successful response from Kafka for order id: {}" +
-                        " Topic: {} Partition: {} Offset: {} Timestamp: {}",
-                        paymentRequestAvroModel.getOrderId(),
-                        metadata.topic(),
-                        metadata.partition(),
-                        metadata.offset(),
-                        metadata.timestamp()
-                );
-            }
-        };
-    }
 }
