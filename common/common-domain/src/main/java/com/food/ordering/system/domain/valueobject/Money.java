@@ -6,6 +6,7 @@ import java.util.Objects;
 
 public class Money {
     private final BigDecimal amount;
+
     public static final Money ZERO = new Money(BigDecimal.ZERO);
 
     public Money(BigDecimal amount) {
@@ -24,11 +25,11 @@ public class Money {
         return new Money(setScale(this.amount.add(money.getAmount())));
     }
 
-    public Money substract(Money money) {
+    public Money subtract(Money money) {
         return new Money(setScale(this.amount.subtract(money.getAmount())));
     }
 
-    public Money mutiply(int multiplier) {
+    public Money multiply(int multiplier) {
         return new Money(setScale(this.amount.multiply(new BigDecimal(multiplier))));
     }
 
@@ -41,7 +42,7 @@ public class Money {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Money money = (Money) o;
-        return Objects.equals(amount, money.amount);
+        return amount.equals(money.amount);
     }
 
     @Override

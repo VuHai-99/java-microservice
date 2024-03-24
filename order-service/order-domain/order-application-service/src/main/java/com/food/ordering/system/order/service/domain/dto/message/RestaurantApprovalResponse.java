@@ -19,5 +19,4 @@ public class RestaurantApprovalResponse {
     private Instant createdAt;
     private OrderApprovalStatus orderApprovalStatus;
     private List<String> failureMessages;
-
 }
