@@ -8,10 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common-application" />
-        <module name="kafka-model" />
         <module name="customer-service" />
-        <module name="order-application-service" />
+        <module name="kafka-model" />
         <module name="kafka-consumer" />
+        <module name="order-application-service" />
         <module name="kafka-producer" />
         <module name="kafka-config-data" />
         <module name="order-container" />
