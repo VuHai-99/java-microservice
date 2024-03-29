@@ -120,7 +120,7 @@ public class PaymentRequestHelper {
     }
 
     private CreditEntry getCreditEntry(CustomerId customerId) {
-        Optional<CreditEntry> creditEntry = creditEntryRepository.findbyCustomerId(customerId);
+        Optional<CreditEntry> creditEntry = creditEntryRepository.findByCustomerId(customerId);
         if (creditEntry.isEmpty()){
             log.error("Could not find credit entry for customer: {}", customerId.getValue());
             throw new PaymentApplicationServiceException("Could not find credit entry for customer: "+
