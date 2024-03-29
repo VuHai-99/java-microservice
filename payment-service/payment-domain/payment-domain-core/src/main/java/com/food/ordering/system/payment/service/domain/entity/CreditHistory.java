@@ -7,6 +7,7 @@ import com.food.ordering.system.payment.service.domain.valueobject.CreditHistory
 import com.food.ordering.system.payment.service.domain.valueobject.TransactionType;
 
 public class CreditHistory extends BaseEntity<CreditHistoryId> {
+
     private final CustomerId customerId;
     private final Money amount;
     private final TransactionType transactionType;
@@ -16,6 +17,10 @@ public class CreditHistory extends BaseEntity<CreditHistoryId> {
         customerId = builder.customerId;
         amount = builder.amount;
         transactionType = builder.transactionType;
+    }
+
+    public static Builder builder() {
+        return new Builder();
     }
 
 
@@ -31,10 +36,6 @@ public class CreditHistory extends BaseEntity<CreditHistoryId> {
         return transactionType;
     }
 
-    public static Builder builder() {
-        return new Builder();
-    }
-
     public static final class Builder {
         private CreditHistoryId creditHistoryId;
         private CustomerId customerId;
@@ -44,8 +45,7 @@ public class CreditHistory extends BaseEntity<CreditHistoryId> {
         private Builder() {
         }
 
-
-        public Builder id(CreditHistoryId val) {
+        public Builder creditHistoryId(CreditHistoryId val) {
             creditHistoryId = val;
             return this;
         }
