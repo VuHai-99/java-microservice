@@ -5,17 +5,11 @@ import com.food.ordering.system.domain.valueobject.Money;
 import com.food.ordering.system.domain.valueobject.OrderId;
 import com.food.ordering.system.payment.service.dataaccess.payment.entity.PaymentEntity;
 import com.food.ordering.system.payment.service.domain.entity.Payment;
+import com.food.ordering.system.payment.service.domain.valueobject.PaymentId;
+import org.springframework.stereotype.Component;
 
-public class PaymentDataaccessMapper {
-    public Payment paymentEntityToPayment(PaymentEntity paymentEntity) {
-        return Payment.builder()
-                .orderId(new OrderId(paymentEntity.getOrderId()))
-                .customerId(new CustomerId(paymentEntity.getCustomerId()))
-                .price(new Money(paymentEntity.getPrice()))
-                .paymentStatus(paymentEntity.getStatus())
-                .createdAt(paymentEntity.getCreatedAt())
-                .build();
-    }
+@Component
+public class PaymentDataAccessMapper {
 
     public PaymentEntity paymentToPaymentEntity(Payment payment) {
         return PaymentEntity.builder()
@@ -27,4 +21,15 @@ public class PaymentDataaccessMapper {
                 .createdAt(payment.getCreatedAt())
                 .build();
     }
+
+    public Payment paymentEntityToPayment(PaymentEntity paymentEntity) {
+        return Payment.builder()
+                .paymentId(new PaymentId(paymentEntity.getId()))
+                .customerId(new CustomerId(paymentEntity.getCustomerId()))
+                .orderId(new OrderId(paymentEntity.getOrderId()))
+                .price(new Money(paymentEntity.getPrice()))
+                .createdAt(paymentEntity.getCreatedAt())
+                .build();
+    }
+
 }

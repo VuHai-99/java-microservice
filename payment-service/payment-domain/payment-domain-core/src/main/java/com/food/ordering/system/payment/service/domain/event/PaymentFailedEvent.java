@@ -8,7 +8,6 @@ import java.util.List;
 
 public class PaymentFailedEvent extends PaymentEvent {
 
-
     private final DomainEventPublisher<PaymentFailedEvent> paymentFailedEventDomainEventPublisher;
 
     public PaymentFailedEvent(Payment payment,

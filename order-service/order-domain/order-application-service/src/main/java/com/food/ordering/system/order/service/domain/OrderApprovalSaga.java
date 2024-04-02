@@ -5,7 +5,6 @@ import com.food.ordering.system.order.service.domain.dto.message.RestaurantAppro
 import com.food.ordering.system.order.service.domain.entity.Order;
 import com.food.ordering.system.order.service.domain.event.OrderCancelledEvent;
 import com.food.ordering.system.order.service.domain.ports.output.message.publisher.payment.OrderCancelledPaymentRequestMessagePublisher;
-import com.food.ordering.system.order.service.domain.ports.output.repository.OrderRepository;
 import com.food.ordering.system.saga.SagaStep;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -19,7 +18,10 @@ public class OrderApprovalSaga implements SagaStep<RestaurantApprovalResponse, E
     private final OrderSagaHelper orderSagaHelper;
     private final OrderCancelledPaymentRequestMessagePublisher orderCancelledPaymentRequestMessagePublisher;
 
-    public OrderApprovalSaga(OrderDomainService orderDomainService, OrderSagaHelper orderSagaHelper, OrderCancelledPaymentRequestMessagePublisher orderCancelledPaymentRequestMessagePublisher) {
+    public OrderApprovalSaga(OrderDomainService orderDomainService,
+                             OrderSagaHelper orderSagaHelper,
+                             OrderCancelledPaymentRequestMessagePublisher
+                                     orderCancelledPaymentRequestMessagePublisher) {
         this.orderDomainService = orderDomainService;
         this.orderSagaHelper = orderSagaHelper;
         this.orderCancelledPaymentRequestMessagePublisher = orderCancelledPaymentRequestMessagePublisher;
@@ -41,10 +43,11 @@ public class OrderApprovalSaga implements SagaStep<RestaurantApprovalResponse, E
     public OrderCancelledEvent rollback(RestaurantApprovalResponse restaurantApprovalResponse) {
         log.info("Cancelling order with id: {}", restaurantApprovalResponse.getOrderId());
         Order order = orderSagaHelper.findOrder(restaurantApprovalResponse.getOrderId());
-        OrderCancelledEvent orderCancelledEvent = orderDomainService.cancelOrderPayment(order, restaurantApprovalResponse.getFailureMessages(),
+        OrderCancelledEvent domainEvent = orderDomainService.cancelOrderPayment(order,
+                restaurantApprovalResponse.getFailureMessages(),
                 orderCancelledPaymentRequestMessagePublisher);
         orderSagaHelper.saveOrder(order);
         log.info("Order with id: {} is cancelling", order.getId().getValue());
-        return orderCancelledEvent;
+        return domainEvent;
     }
 }

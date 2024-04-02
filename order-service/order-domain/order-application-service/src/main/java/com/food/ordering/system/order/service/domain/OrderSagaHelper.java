@@ -13,6 +13,7 @@ import java.util.UUID;
 @Slf4j
 @Component
 public class OrderSagaHelper {
+
     private final OrderRepository orderRepository;
 
     public OrderSagaHelper(OrderRepository orderRepository) {
@@ -21,9 +22,9 @@ public class OrderSagaHelper {
 
     Order findOrder(String orderId) {
         Optional<Order> orderResponse = orderRepository.findById(new OrderId(UUID.fromString(orderId)));
-        if(orderResponse.isEmpty()) {
+        if (orderResponse.isEmpty()) {
             log.error("Order with id: {} could not be found!", orderId);
-            throw new OrderNotFoundException("Order with id: "+ orderId +" could not be found!");
+            throw new OrderNotFoundException("Order with id " + orderId + " could not be found!");
         }
         return orderResponse.get();
     }

@@ -10,10 +10,7 @@
         <module>infrastructure</module>
         <module>customer-service</module>
         <module>payment-service</module>
-        <module>payment-service/payment-domain</module>
-        <module>payment-service/payment-dataaccess</module>
-        <module>payment-service/payment-messaging</module>
-        <module>payment-service/payment-container</module>
+        <module>restaurant-service</module>
     </modules>
 
     <parent>
