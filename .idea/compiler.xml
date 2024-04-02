@@ -19,8 +19,8 @@
         <module name="order-application" />
         <module name="restaurant-domain-core" />
         <module name="order-domain-core" />
-        <module name="payment-domain-core" />
         <module name="saga" />
+        <module name="payment-domain-core" />
         <module name="common-dataaccess" />
         <module name="restaurant-application-service" />
         <module name="customer-service" />
@@ -29,7 +29,6 @@
         <module name="kafka-config-data" />
         <module name="payment-dataaccess" />
         <module name="order-container" />
-        <module name="payment-domain" />
         <module name="restaurant-dataaccess" />
         <module name="payment-container" />
         <module name="restaurant-messaging" />
