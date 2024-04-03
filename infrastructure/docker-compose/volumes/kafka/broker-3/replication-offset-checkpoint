@@ -30,7 +30,7 @@ payment-request 1 2
 __consumer_offsets 2 0
 restaurant-approval-request 2 1
 __consumer_offsets 12 0
-__consumer_offsets 44 13
+__consumer_offsets 44 15
 __consumer_offsets 36 0
 __consumer_offsets 45 0
 __consumer_offsets 16 0
@@ -42,7 +42,7 @@ __consumer_offsets 10 0
 __consumer_offsets 20 0
 __consumer_offsets 47 0
 __consumer_offsets 18 0
-__consumer_offsets 7 12
+__consumer_offsets 7 14
 __consumer_offsets 48 0
 payment-response 0 0
 __consumer_offsets 22 0

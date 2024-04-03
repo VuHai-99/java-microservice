@@ -1,4 +1,5 @@
 /Users/henry/IdeaProjects/9-food-ordering-system/infrastructure/kafka/kafka-model/src/main/java/com/food/ordering/system/kafka/order/avro/model/RestaurantApprovalResponseAvroModel.java
+/Users/henry/IdeaProjects/9-food-ordering-system/infrastructure/kafka/kafka-model/src/main/java/com/food/ordering/system/kafka/order/avro/model/CustomerAvroModel.java
 /Users/henry/IdeaProjects/9-food-ordering-system/infrastructure/kafka/kafka-model/src/main/java/com/food/ordering/system/kafka/order/avro/model/PaymentRequestAvroModel.java
 /Users/henry/IdeaProjects/9-food-ordering-system/infrastructure/kafka/kafka-model/src/main/java/com/food/ordering/system/kafka/order/avro/model/Product.java
 /Users/henry/IdeaProjects/9-food-ordering-system/infrastructure/kafka/kafka-model/src/main/java/com/food/ordering/system/kafka/order/avro/model/PaymentOrderStatus.java
