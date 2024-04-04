@@ -19,9 +19,4 @@ public class CustomerCreatedEvent implements DomainEvent<Customer> {
     public Customer getCustomer() {
         return customer;
     }
-
-    @Override
-    public void fire() {
-
-    }
 }
