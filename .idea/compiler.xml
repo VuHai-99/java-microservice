@@ -16,6 +16,7 @@
         <module name="customer-service" />
         <module name="kafka-config-data" />
         <module name="payment-dataaccess" />
+        <module name="outbox" />
         <module name="order-container" />
         <module name="payment-container" />
         <module name="restaurant-messaging" />
