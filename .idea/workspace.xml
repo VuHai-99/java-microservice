@@ -5,29 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d2143ad-7ef2-4b6f-a165-6bd889e8563a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/outbox/payment/adapter/PaymentOutboxRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/outbox/payment/entity/PaymentOutboxEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/outbox/payment/exception/PaymentOutboxNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/outbox/payment/mapper/PaymentOutboxDataAccessMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/outbox/payment/repository/PaymentOutboxJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/outbox/restaurantapproval/adapter/ApprovalOutboxRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/outbox/restaurantapproval/entity/ApprovalOutboxEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/outbox/restaurantapproval/exception/ApprovalOutboxNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/outbox/restaurantapproval/mapper/ApprovalOutboxDataAccessMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/outbox/restaurantapproval/repository/ApprovalOutboxJpaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/system/domain/event/DomainEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/system/domain/event/DomainEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/saga/src/main/java/com/food/ordering/system/saga/SagaStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/saga/src/main/java/com/food/ordering/system/saga/SagaStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/service/domain/OrderApprovalSaga.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/service/domain/OrderApprovalSaga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/service/domain/OrderPaymentSaga.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/service/domain/OrderPaymentSaga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/service/domain/PaymentResponseMessageListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/service/domain/PaymentResponseMessageListenerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/service/domain/RestaurantApprovalResponseMessageListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/service/domain/RestaurantApprovalResponseMessageListenerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/order/service/domain/OrderDomainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/order/service/domain/OrderDomainService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/order/service/domain/OrderDomainServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/order/service/domain/OrderDomainServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/order/service/domain/event/OrderCancelledEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/order/service/domain/event/OrderCancelledEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/order/service/domain/event/OrderCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/order/service/domain/event/OrderCreatedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/order/service/domain/event/OrderPaidEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/order/service/domain/event/OrderPaidEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/test/java/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/system/domain/event/EmptyEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/target/classes/com/food/ordering/system/domain/event/DomainEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-domain/target/classes/com/food/ordering/system/domain/event/DomainEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/target/classes/com/food/ordering/system/domain/event/EmptyEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/saga/target/classes/com/food/ordering/system/saga/SagaStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/saga/target/classes/com/food/ordering/system/saga/SagaStep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/test/java/com/food/ordering/system/order/service/domain/OrderApplicationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/test/java/com/food/ordering/system/order/service/domain/OrderApplicationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/test/java/com/food/ordering/system/order/service/domain/OrderTestConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/test/java/com/food/ordering/system/order/service/domain/OrderTestConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/target/classes/com/food/ordering/system/order/service/domain/OrderDomainService.class" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/target/classes/com/food/ordering/system/order/service/domain/OrderDomainService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/target/classes/com/food/ordering/system/order/service/domain/OrderDomainServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/target/classes/com/food/ordering/system/order/service/domain/OrderDomainServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/target/classes/com/food/ordering/system/order/service/domain/event/OrderCancelledEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/target/classes/com/food/ordering/system/order/service/domain/event/OrderCancelledEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/target/classes/com/food/ordering/system/order/service/domain/event/OrderCreatedEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/target/classes/com/food/ordering/system/order/service/domain/event/OrderCreatedEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/target/classes/com/food/ordering/system/order/service/domain/event/OrderPaidEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/target/classes/com/food/ordering/system/order/service/domain/event/OrderPaidEvent.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +67,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.OrderApplicationServiceTest.executor": "Run",
     "JUnit.OrderApplicationServiceTest.testCreateOrder.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -92,7 +83,7 @@
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "/Users/henry/IdeaProjects/9-food-ordering-system/common/common-application/src/main/java/com/food/ordering/system",
-    "last_opened_file_path": "/Users/HenryZalo/Study/Udemy/study-microservices/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess",
+    "last_opened_file_path": "/Users/HenryZalo/Study/Udemy/study-microservices/order-service/order-domain/order-application-service/src/test/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,11 +99,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/test/java" />
       <recent name="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess" />
       <recent name="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/service/domain/outbox/scheduler/approval" />
       <recent name="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/service/domain/outbox/model/approval" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/service/domain/ports/input/message/listener" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.food.ordering.system.order.service.application.exception.handler" />
@@ -135,7 +126,22 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
+  <component name="RunManager" selected="JUnit.OrderApplicationServiceTest">
+    <configuration name="OrderApplicationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-application-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.food.ordering.system.order.service.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.food.ordering.system.order.service.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.food.ordering.system.order.service.domain.OrderApplicationServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OrderApplicationServiceTest.testCreateOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-application-service" />
       <extension name="coverage">
@@ -223,6 +229,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderApplicationServiceTest" />
         <item itemvalue="JUnit.OrderApplicationServiceTest.testCreateOrder" />
       </list>
     </recent_temporary>
@@ -255,7 +262,7 @@
       <workItem from="1711639390050" duration="2581000" />
       <workItem from="1712142969799" duration="17788000" />
       <workItem from="1712739033566" duration="1648000" />
-      <workItem from="1712740698613" duration="6736000" />
+      <workItem from="1712740698613" duration="8358000" />
     </task>
     <servers />
   </component>
