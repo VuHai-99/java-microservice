@@ -16,10 +16,12 @@ import java.util.stream.Collectors;
 @Slf4j
 @Component
 public class OrderOutboxScheduler implements OutboxScheduler {
+
     private final OrderOutboxHelper orderOutboxHelper;
     private final PaymentResponseMessagePublisher paymentResponseMessagePublisher;
 
-    public OrderOutboxScheduler(OrderOutboxHelper orderOutboxHelper, PaymentResponseMessagePublisher paymentResponseMessagePublisher) {
+    public OrderOutboxScheduler(OrderOutboxHelper orderOutboxHelper,
+                                PaymentResponseMessagePublisher paymentResponseMessagePublisher) {
         this.orderOutboxHelper = orderOutboxHelper;
         this.paymentResponseMessagePublisher = paymentResponseMessagePublisher;
     }
@@ -42,4 +44,5 @@ public class OrderOutboxScheduler implements OutboxScheduler {
             log.info("{} OrderOutboxMessage sent to message bus!", outboxMessages.size());
         }
     }
+
 }

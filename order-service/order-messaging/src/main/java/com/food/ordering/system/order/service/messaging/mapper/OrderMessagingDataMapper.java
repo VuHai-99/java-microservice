@@ -3,10 +3,6 @@ package com.food.ordering.system.order.service.messaging.mapper;
 import com.food.ordering.system.kafka.order.avro.model.*;
 import com.food.ordering.system.order.service.domain.dto.message.PaymentResponse;
 import com.food.ordering.system.order.service.domain.dto.message.RestaurantApprovalResponse;
-import com.food.ordering.system.order.service.domain.entity.Order;
-import com.food.ordering.system.order.service.domain.event.OrderCancelledEvent;
-import com.food.ordering.system.order.service.domain.event.OrderCreatedEvent;
-import com.food.ordering.system.order.service.domain.event.OrderPaidEvent;
 import com.food.ordering.system.order.service.domain.outbox.model.approval.OrderApprovalEventPayload;
 import com.food.ordering.system.order.service.domain.outbox.model.payment.OrderPaymentEventPayload;
 import org.springframework.stereotype.Component;
@@ -49,7 +45,7 @@ public class OrderMessagingDataMapper {
     }
 
     public PaymentRequestAvroModel orderPaymentEventToPaymentRequestAvroModel(String sagaId, OrderPaymentEventPayload
-            orderPaymentEventPayload) {
+                                                                              orderPaymentEventPayload) {
         return PaymentRequestAvroModel.newBuilder()
                 .setId(UUID.randomUUID().toString())
                 .setSagaId(sagaId)
@@ -80,4 +76,5 @@ public class OrderMessagingDataMapper {
                 .setCreatedAt(orderApprovalEventPayload.getCreatedAt().toInstant())
                 .build();
     }
+
 }

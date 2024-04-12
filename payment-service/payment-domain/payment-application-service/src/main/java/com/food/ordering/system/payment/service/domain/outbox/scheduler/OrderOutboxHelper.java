@@ -24,6 +24,7 @@ import static com.food.ordering.system.saga.order.SagaConstants.ORDER_SAGA_NAME;
 @Slf4j
 @Component
 public class OrderOutboxHelper {
+
     private final OrderOutboxRepository orderOutboxRepository;
     private final ObjectMapper objectMapper;
 
@@ -82,7 +83,6 @@ public class OrderOutboxHelper {
             throw new PaymentDomainException("Could not create OrderEventPayload json!", e);
         }
     }
-
 
     private void save(OrderOutboxMessage orderOutboxMessage) {
         OrderOutboxMessage response = orderOutboxRepository.save(orderOutboxMessage);

@@ -31,7 +31,6 @@ public class OrderCreateHelper {
 
     private final OrderDataMapper orderDataMapper;
 
-
     public OrderCreateHelper(OrderDomainService orderDomainService,
                              OrderRepository orderRepository,
                              CustomerRepository customerRepository,
