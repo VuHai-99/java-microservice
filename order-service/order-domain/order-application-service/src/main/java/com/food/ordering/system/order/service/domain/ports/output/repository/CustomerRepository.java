@@ -10,5 +10,4 @@ public interface CustomerRepository {
     Optional<Customer> findCustomer(UUID customerId);
 
     Customer save(Customer customer);
-
 }
