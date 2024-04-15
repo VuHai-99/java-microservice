@@ -4,6 +4,7 @@ import com.food.ordering.system.domain.valueobject.*;
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderCommand;
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderResponse;
 import com.food.ordering.system.order.service.domain.dto.create.OrderAddress;
+import com.food.ordering.system.order.service.domain.dto.message.CustomerModel;
 import com.food.ordering.system.order.service.domain.dto.track.TrackOrderResponse;
 import com.food.ordering.system.order.service.domain.entity.*;
 import com.food.ordering.system.order.service.domain.event.OrderCancelledEvent;
@@ -26,11 +27,11 @@ public class OrderDataMapper {
         return Restaurant.builder()
                 .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .products(createOrderCommand.getItems().stream().map(orderItem ->
-                        new Product(new ProductId(orderItem.getProductId())))
+                                new Product(new ProductId(orderItem.getProductId())))
                         .collect(Collectors.toList()))
                 .build();
     }
-    
+
     public Order createOrderCommandToOrder(CreateOrderCommand createOrderCommand) {
         return Order.builder()
                 .customerId(new CustomerId(createOrderCommand.getCustomerId()))
@@ -93,6 +94,12 @@ public class OrderDataMapper {
                 .build();
     }
 
+    public Customer customerModelToCustomer(CustomerModel customerModel) {
+        return new Customer(new CustomerId(UUID.fromString(customerModel.getId())),
+                customerModel.getUsername(),
+                customerModel.getFirstName(),
+                customerModel.getLastName());
+    }
 
     private List<OrderItem> orderItemsToOrderItemEntities(
             List<com.food.ordering.system.order.service.domain.dto.create.OrderItem> orderItems) {
