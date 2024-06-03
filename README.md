@@ -17,6 +17,8 @@ Welcome to the Food Ordering System Microservice Backend! This project is design
 
 The system is built following the principles of Domain-Driven Design (DDD) and Hexagonal Architecture. This approach ensures that the core business logic is isolated from external systems like databases and message brokers, promoting better testability and maintainability.
 
+![System Architecture](https://drive.google.com/uc?export=view&id=11RUahBS5cdprsIZ-vO9XDZCabSefA0-b)
+
 ### Key Components
 
 - **Order Service**: Manages the lifecycle of orders, from creation to fulfillment.
