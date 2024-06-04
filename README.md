@@ -35,3 +35,27 @@ The system is built following the principles of Domain-Driven Design (DDD) and H
 - **Change Data Capture (CDC)**: Utilized for monitoring and capturing data changes in the database, ensuring data consistency across services.
 - **Outbox Pattern**: Ensures reliable message delivery by storing messages in the database and sending them through Kafka.
 
+### Code structure
+- **Common**: A common module which shared/used between child module.
+- **Module**: Each service is contains of several part:
+    - ***Application***: For public rest APIs.
+    - ***Order Container***: For initialize service and infrastructure configurations.
+    - ***Order Access***: Create data access of all other microservices entity. Each sub-module contains:
+        - ***Adapter***: Implementation of <u><em><strong>Output Port</strong></em></u>. 
+        - ***Entity***: Business level entity.
+        - ***Mapper***: Mapper from Core Entity to Domain Level Entity 
+        - ***Repository***: Direct read/write to DB
+    - ***Order Domain***: Control core logic & core entity. Each sub-module contains:
+        - ***Order Application***: 
+            - ***Config***: Constant value for config
+            - ***Dto***: Dto for input & output port of the service
+            - ***Mapper***: Mapper from input DTO into Core Entity to handlig
+            - ***Port***: Declare interface for input & output port function
+        - ***Order Domain Core***: Controls ObjectValue and Core Entity
+    - ***Order Messaging***: Implement event-driven function. Each sub-module contains:
+        - ***Mapper***: Mapping Domain Level Entity, Core Entity to Event Data Entity
+        - ***Publisher/Consumer***: Implementation of <u><em><strong>Port (Order Application)</strong></em></u> to handle event-based request.
+- **Infrastructure**: K8s configurations for all services in the system. Contains:
+    - Postgres
+    - ZooKeeper
+    - Kafka
